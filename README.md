@@ -70,8 +70,8 @@ The entire project in partial fulfilment towards completing Udacity's Data Scien
 The videos and lectures guided me to understand and implemen each technique.
 
 The Custom Transformers and using word2vec model was inspired by various medium posts and other websites, links to some of them are given below.
-https://www.shanelynn.ie/word-embeddings-in-python-with-spacy-and-gensim/
-https://towardsdatascience.com/how-to-compute-sentence-similarity-using-bert-and-word2vec-ab0663a5d64
+[Word Embeddings](https://www.shanelynn.ie/word-embeddings-in-python-with-spacy-and-gensim/), 
+[Medium Post](https://towardsdatascience.com/how-to-compute-sentence-similarity-using-bert-and-word2vec-ab0663a5d64)
 
 
 
