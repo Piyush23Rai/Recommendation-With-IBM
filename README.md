@@ -43,6 +43,7 @@ A machine learning approach to building recommendations. Using the user-item int
 	|- user-item-interactions.csv #file that contains user article interactions’ data.
     • Recommendations_with_IBM.ipynb #python notebook that has all the codes discussing each technique
     • projects_test.py #file that contains test cases corresponding to cases in notebook
+    • custom_transformer.py #file that contains class of a custom transformer based on gensim word2vec model
     • Recommendations_with_IBM.html #html converted file of the notebook
     • top_10.p #pickle file containing top 10 articles
     • top_20.p #pickle file containing top 20 articles
@@ -67,6 +68,10 @@ The Observations corresponding to each technique is discussed in the notebook.
 
 The entire project in partial fulfilment towards completing Udacity's Data Science Nanodegree Program.
 The videos and lectures guided me to understand and implemen each technique.
+
+The Custom Transformers and using word2vec model was inspired by various medium posts and other websites, links to some of them are given below.
+https://www.shanelynn.ie/word-embeddings-in-python-with-spacy-and-gensim/
+https://towardsdatascience.com/how-to-compute-sentence-similarity-using-bert-and-word2vec-ab0663a5d64
 
 
 
