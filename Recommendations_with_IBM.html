@@ -13367,7 +13367,7 @@ VI. <a href="#conclusions">Extras &amp; Concluding</a></p>
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;email&#39;</span><span class="p">])[</span><span class="s1">&#39;article_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;email&#39;</span><span class="p">])[</span><span class="s1">&#39;article_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13386,7 +13386,22 @@ VI. <a href="#conclusions">Extras &amp; Concluding</a></p>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>3.0</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f8ae2fa05c0&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
 </div>
 
 </div>
@@ -13400,43 +13415,10 @@ VI. <a href="#conclusions">Extras &amp; Concluding</a></p>
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;email&#39;</span><span class="p">])[</span><span class="s1">&#39;article_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[4]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>364</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Fill in the median and maximum number of user_article interactios below</span>
 
-<span class="n">median_val</span> <span class="o">=</span> <span class="mi">3</span><span class="c1"># 50% of individuals interact with ____ number of articles or fewer.</span>
-<span class="n">max_views_by_user</span> <span class="o">=</span> <span class="mi">364</span><span class="c1"># The maximum number of user-article interactions by any 1 user is ______.</span>
+<span class="n">median_val</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;email&#39;</span><span class="p">])[</span><span class="s1">&#39;article_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">median</span><span class="p">()</span><span class="c1"># 50% of individuals interact with ____ number of articles or fewer.</span>
+<span class="n">max_views_by_user</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;email&#39;</span><span class="p">])[</span><span class="s1">&#39;article_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="c1"># The maximum number of user-article interactions by any 1 user is ______.</span>
 </pre></div>
 
     </div>
@@ -13454,7 +13436,7 @@ VI. <a href="#conclusions">Extras &amp; Concluding</a></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Find and explore duplicate articles</span>
@@ -13471,7 +13453,7 @@ VI. <a href="#conclusions">Extras &amp; Concluding</a></p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -13555,7 +13537,7 @@ VI. <a href="#conclusions">Extras &amp; Concluding</a></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Remove any rows that have the same article_id - only keep the first</span>
@@ -13581,17 +13563,35 @@ VI. <a href="#conclusions">Extras &amp; Concluding</a></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">unique_articles</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">article_id</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="c1"># The number of unique articles that have at least one interaction</span>
+<span class="n">total_articles</span> <span class="o">=</span> <span class="n">df_content</span><span class="o">.</span><span class="n">article_id</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="c1"># The number of unique articles on the IBM platform</span>
+<span class="n">unique_users</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">email</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="c1"># The number of unique users</span>
+<span class="n">user_article_interactions</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="c1"># The number of user-article interactions</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>4.</code> Use the cells below to find the most viewed <strong>article_id</strong>, as well as how often it was viewed.  After talking to the company leaders, the <code>email_mapper</code> function was deemed a reasonable way to map users to ids.  There were a small number of null values, and it was found that all of these null values likely belonged to a single user (which is how they are stored using the function below).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#a </span>
-<span class="n">df</span><span class="o">.</span><span class="n">article_id</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
-<span class="c1">#b </span>
-<span class="n">df_content</span><span class="o">.</span><span class="n">article_id</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
-<span class="c1">#c </span>
-<span class="n">df</span><span class="o">.</span><span class="n">email</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
-<span class="c1">#d </span>
-<span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">article_count</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;article_id&#39;</span><span class="p">)[</span><span class="s1">&#39;email&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">())</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">article_count</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">article_count</span><span class="o">.</span><span class="n">email</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()]</span>
 </pre></div>
 
     </div>
@@ -13610,64 +13610,6 @@ VI. <a href="#conclusions">Extras &amp; Concluding</a></p>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>45993</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">unique_articles</span> <span class="o">=</span> <span class="mi">714</span><span class="c1"># The number of unique articles that have at least one interaction</span>
-<span class="n">total_articles</span> <span class="o">=</span> <span class="mi">1051</span><span class="c1"># The number of unique articles on the IBM platform</span>
-<span class="n">unique_users</span> <span class="o">=</span> <span class="mi">5148</span><span class="c1"># The number of unique users</span>
-<span class="n">user_article_interactions</span> <span class="o">=</span> <span class="mi">45993</span><span class="c1"># The number of user-article interactions</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><code>4.</code> Use the cells below to find the most viewed <strong>article_id</strong>, as well as how often it was viewed.  After talking to the company leaders, the <code>email_mapper</code> function was deemed a reasonable way to map users to ids.  There were a small number of null values, and it was found that all of these null values likely belonged to a single user (which is how they are stored using the function below).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">article_count</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;article_id&#39;</span><span class="p">)[</span><span class="s1">&#39;email&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">())</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-<span class="n">article_count</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">article_count</span><span class="o">.</span><span class="n">email</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[10]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
 <pre>article_id    1429.0
 email          937.0
 Name: 699, dtype: float64</pre>
@@ -13681,7 +13623,7 @@ Name: 699, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">most_viewed_article_id</span> <span class="o">=</span> <span class="s1">&#39;1429.0&#39;</span><span class="c1"># The most viewed article in the dataset as a string with one value following the decimal </span>
@@ -13695,7 +13637,7 @@ Name: 699, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## No need to change the code here - this will be helpful for later parts of the notebook</span>
@@ -13732,7 +13674,7 @@ Name: 699, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[12]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -13804,7 +13746,7 @@ Name: 699, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## If you stored all your results in the variable names above, </span>
@@ -13859,7 +13801,7 @@ Name: 699, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_top_articles</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="p">):</span>
@@ -13908,7 +13850,7 @@ Name: 699, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">get_top_articles</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
@@ -13941,7 +13883,7 @@ Name: 699, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Test your function by returning the top 5, 10, and 20 articles</span>
@@ -14001,7 +13943,7 @@ Your top_20 looks like the solution list! Nice job.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create the user-article matrix with 1&#39;s and 0&#39;s</span>
@@ -14033,7 +13975,7 @@ Your top_20 looks like the solution list! Nice job.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Tests: You should just need to run this cell.  Don&#39;t change the code.</span>
@@ -14077,7 +14019,7 @@ Your top_20 looks like the solution list! Nice job.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">find_similar_users</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">user_item</span><span class="o">=</span><span class="n">user_item</span><span class="p">):</span>
@@ -14125,7 +14067,7 @@ Your top_20 looks like the solution list! Nice job.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Do a spot check of your function</span>
@@ -14169,7 +14111,7 @@ The 3 most similar users to user 46 are: [4201, 23, 3782]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_article_names</span><span class="p">(</span><span class="n">article_ids</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="p">):</span>
@@ -14260,13 +14202,6 @@ The 3 most similar users to user 46 are: [4201, 23, 3782]
                 <span class="n">recs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">article</span><span class="p">)</span>
                 <span class="n">count</span> <span class="o">=</span> <span class="n">count</span><span class="o">+</span><span class="mi">1</span>
     
-    <span class="c1">#if the similar users list is exhausted and still m recommendations are not met</span>
-    <span class="c1">#articles are chosen arbitrarily</span>
-    <span class="k">if</span><span class="p">(</span><span class="n">count</span><span class="o">&lt;</span><span class="n">m</span><span class="p">):</span>
-        <span class="k">while</span><span class="p">(</span><span class="n">count</span><span class="o">==</span><span class="n">m</span><span class="p">):</span>
-            <span class="n">article</span> <span class="o">=</span> <span class="n">choice</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;article_id&#39;</span><span class="p">])</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">recs</span> <span class="ow">and</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">articles_seen</span><span class="p">)])</span>
-            <span class="n">recs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">article</span><span class="p">)</span>
-            <span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="o">+</span><span class="mi">1</span>
             
     <span class="k">return</span> <span class="n">recs</span> <span class="c1"># return your recommendations for this user_id    </span>
 </pre></div>
@@ -14278,7 +14213,7 @@ The 3 most similar users to user 46 are: [4201, 23, 3782]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Check Results</span>
@@ -14295,7 +14230,7 @@ The 3 most similar users to user 46 are: [4201, 23, 3782]
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[22]:</div>
+    <div class="prompt output_prompt">Out[20]:</div>
 
 
 
@@ -14321,7 +14256,7 @@ The 3 most similar users to user 46 are: [4201, 23, 3782]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Test your functions here - No need to change this code - just run this cell</span>
@@ -14373,7 +14308,7 @@ The 3 most similar users to user 46 are: [4201, 23, 3782]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_top_sorted_users</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">user_item</span><span class="o">=</span><span class="n">user_item</span><span class="p">):</span>
@@ -14409,6 +14344,21 @@ The 3 most similar users to user 46 are: [4201, 23, 3782]
     
     <span class="k">return</span> <span class="n">neighbors_df</span> <span class="c1"># Return the dataframe specified in the doc_string</span>
 
+<span class="k">def</span> <span class="nf">articles_sorted_num_inter</span><span class="p">(</span><span class="n">article_ids</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    INPUT:</span>
+<span class="sd">    article)ids - (list) a list of article_ids</span>
+<span class="sd">     </span>
+<span class="sd">    OUTPUT:</span>
+<span class="sd">    article_ids_sorted - (list) a list of article ids sorted by number of interactions</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="n">article_interaction_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">article_id</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="s1">&#39;num_interactions&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span>\
+    <span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;num_interactions&#39;</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    
+    <span class="n">article_ids_sorted</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">article_interaction_df</span><span class="p">[</span><span class="n">article_interaction_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">article_ids</span><span class="p">)][</span><span class="s1">&#39;index&#39;</span><span class="p">])</span>
+    
+    <span class="k">return</span> <span class="n">article_ids_sorted</span>
 
 <span class="k">def</span> <span class="nf">user_user_recs_part2</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
@@ -14450,6 +14400,9 @@ The 3 most similar users to user 46 are: [4201, 23, 3782]
         <span class="c1">#get articles seen by the user</span>
         <span class="n">articles_user</span> <span class="o">=</span> <span class="n">get_user_articles</span><span class="p">(</span><span class="n">user</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
         
+        <span class="c1">#sort articles basis number of interactions in descending order</span>
+        <span class="n">articles_user</span> <span class="o">=</span> <span class="n">articles_sorted_num_inter</span><span class="p">(</span><span class="n">articles_user</span><span class="p">)</span>
+        
         <span class="c1">#loop through articles to give user recommendations of articles </span>
         <span class="c1">#the user has not seen through similar users</span>
         <span class="k">for</span> <span class="n">article</span> <span class="ow">in</span> <span class="n">articles_user</span><span class="p">:</span>
@@ -14458,14 +14411,6 @@ The 3 most similar users to user 46 are: [4201, 23, 3782]
                     <span class="k">break</span>
                 <span class="n">recs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">article</span><span class="p">)</span>
                 <span class="n">count</span> <span class="o">=</span> <span class="n">count</span><span class="o">+</span><span class="mi">1</span>
-    
-    <span class="c1">#if the similar users list is exhausted and still m recommendations are not met</span>
-    <span class="c1">#articles are chosen arbitrarily</span>
-    <span class="k">if</span><span class="p">(</span><span class="n">count</span><span class="o">&lt;</span><span class="n">m</span><span class="p">):</span>
-        <span class="k">while</span><span class="p">(</span><span class="n">count</span><span class="o">==</span><span class="n">m</span><span class="p">):</span>
-            <span class="n">article</span> <span class="o">=</span> <span class="n">choice</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;article_id&#39;</span><span class="p">])</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">recs</span> <span class="ow">and</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">articles_seen</span><span class="p">)])</span>
-            <span class="n">recs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">article</span><span class="p">)</span>
-            <span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="o">+</span><span class="mi">1</span>
             
     <span class="n">rec_names</span> <span class="o">=</span> <span class="n">get_article_names</span><span class="p">(</span><span class="n">recs</span><span class="p">)</span>
     
@@ -14479,7 +14424,7 @@ The 3 most similar users to user 46 are: [4201, 23, 3782]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Quick spot check - don&#39;t change this code - just use it to test your functions</span>
@@ -14506,10 +14451,10 @@ The 3 most similar users to user 46 are: [4201, 23, 3782]
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>The top 10 recommendations for user 20 are the following article ids:
-[43.0, 109.0, 111.0, 112.0, 164.0, 213.0, 225.0, 313.0, 337.0, 379.0]
+[1437.0, 53.0, 221.0, 213.0, 1180.0, 76.0, 130.0, 749.0, 727.0, 965.0]
 
 The top 10 recommendations for user 20 are the following article names:
-[&#39;a visual explanation of the back propagation algorithm for neural networks&#39;, &#39;building custom machine learning algorithms with apache systemml&#39;, &#39;data structures related to machine learning algorithms&#39;, &#39;deep learning with tensorflow course by big data university&#39;, &#39;generalization in deep learning&#39;, &#39;learn tensorflow and deep learning together and now!&#39;, &#39;modeling energy usage in new york city&#39;, &#39;tensorflow quick tips&#39;, &#39;tidy up your jupyter notebooks with scripts&#39;, &#39;what is machine learning?&#39;]
+[&#39;calls by customers of a telco company&#39;, &#39;data visualization playbook: revisiting the basics&#39;, &#34;feature importance and why it&#39;s important&#34;, &#39;from python nested lists to multidimensional numpy arrays&#39;, &#39;how smart catalogs can turn the big data flood into an ocean of opportunity&#39;, &#39;hurricane how-to&#39;, &#39;introducing streams designer&#39;, &#39;modeling energy usage in new york city&#39;, &#39;this week in data science (may 2, 2017)&#39;, &#39;what caused the challenger disaster?&#39;]
 </pre>
 </div>
 </div>
@@ -14528,7 +14473,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">get_top_sorted_users</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;neighbor_id&#39;</span><span class="p">])</span>
@@ -14561,7 +14506,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Tests with a dictionary of results</span>
@@ -14577,7 +14522,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Dictionary Test Here</span>
@@ -14624,6 +14569,8 @@ The top 10 recommendations for user 20 are the following article names:
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Provide your response here.</strong></p>
+<p>Obviously we have no other data on a new user which is a classic case for Rank/Knowledge based recommendations. Our <b>get_top_article</b> function will come in handy for recommendations to new users.</p>
+<p>Also, if we have meta data on our new users such as age, location etc. we may as well use <b>Content/Colloborative filterting Based Recommendations</b> by grouping users on meta data and finding out articles a particular groupd has most interacted with. This way, our new user will fall into one such group based on it's meta data, thereby providing some input to our Content/Colloborative filtering based recommendations.</p>
 
 </div>
 </div>
@@ -14638,7 +14585,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_user</span> <span class="o">=</span> <span class="s1">&#39;0.0&#39;</span>
@@ -14655,7 +14602,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="nb">set</span><span class="p">(</span><span class="n">new_user_recs</span><span class="p">)</span> <span class="o">==</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;1314.0&#39;</span><span class="p">,</span><span class="s1">&#39;1429.0&#39;</span><span class="p">,</span><span class="s1">&#39;1293.0&#39;</span><span class="p">,</span><span class="s1">&#39;1427.0&#39;</span><span class="p">,</span><span class="s1">&#39;1162.0&#39;</span><span class="p">,</span><span class="s1">&#39;1364.0&#39;</span><span class="p">,</span><span class="s1">&#39;1304.0&#39;</span><span class="p">,</span><span class="s1">&#39;1170.0&#39;</span><span class="p">,</span><span class="s1">&#39;1431.0&#39;</span><span class="p">,</span><span class="s1">&#39;1330.0&#39;</span><span class="p">]),</span> <span class="s2">&quot;Oops!  It makes sense that in this case we would want to recommend the most popular articles, because we don&#39;t know anything about these users.&quot;</span>
@@ -14704,10 +14651,11 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install rake_nltk
+<span class="o">!</span>pip install progressbar
 </pre></div>
 
     </div>
@@ -14727,6 +14675,9 @@ The top 10 recommendations for user 20 are the following article names:
 <pre>Requirement already satisfied: rake_nltk in /opt/conda/lib/python3.6/site-packages (1.0.4)
 Requirement already satisfied: nltk in /opt/conda/lib/python3.6/site-packages (from rake_nltk) (3.2.5)
 Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (from nltk-&gt;rake_nltk) (1.11.0)
+<span class="ansi-yellow-fg">WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span>
+Requirement already satisfied: progressbar in /opt/conda/lib/python3.6/site-packages (2.5)
+<span class="ansi-yellow-fg">WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span>
 </pre>
 </div>
 </div>
@@ -14740,40 +14691,11 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 <div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install progressbar
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Requirement already satisfied: progressbar in /opt/conda/lib/python3.6/site-packages (2.5)
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
-<div class="inner_cell">
-    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">rake_nltk</span> <span class="k">import</span> <span class="n">Rake</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="k">import</span> <span class="n">cosine_similarity</span>
 <span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="k">import</span> <span class="n">TfidfVectorizer</span>
+<span class="kn">from</span> <span class="nn">gensim.models</span> <span class="k">import</span> <span class="n">Word2Vec</span>
+<span class="kn">from</span> <span class="nn">custom_transformer</span> <span class="k">import</span> <span class="n">CustomWord2Vec</span>
 <span class="kn">import</span> <span class="nn">progressbar</span>
 </pre></div>
 
@@ -14792,7 +14714,7 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">data_cleaning</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">df_content</span><span class="p">):</span>
@@ -14854,7 +14776,7 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">compute_similarity</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">df_content</span><span class="p">):</span>
@@ -14868,12 +14790,24 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 <span class="sd">    &#39;&#39;&#39;</span>
     
     <span class="n">df_clean</span> <span class="o">=</span> <span class="n">data_cleaning</span><span class="p">(</span><span class="n">df_content</span><span class="p">)</span>
-        
-    <span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">analyzer</span><span class="o">=</span><span class="s1">&#39;word&#39;</span><span class="p">,</span><span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">,</span><span class="n">ngram_range</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">min_df</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">matrix</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df_clean</span><span class="p">[</span><span class="s1">&#39;Key_words&#39;</span><span class="p">])</span>
     
-    <span class="c1">#generating cosine similarity matrix</span>
-    <span class="n">cosine_sim</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span><span class="n">matrix</span><span class="p">)</span>
+    <span class="c1">#matrix computed using tfidf transformer</span>
+    <span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">analyzer</span><span class="o">=</span><span class="s1">&#39;word&#39;</span><span class="p">,</span><span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">,</span><span class="n">ngram_range</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">min_df</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">matrix_tfidf</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df_clean</span><span class="p">[</span><span class="s1">&#39;Key_words&#39;</span><span class="p">])</span>
+    
+    <span class="c1">#fitting our corpus on Word2Vec custome transformer</span>
+    <span class="n">w2v</span> <span class="o">=</span>  <span class="n">CustomWord2Vec</span><span class="p">()</span>
+    <span class="n">w2v</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_clean</span><span class="p">[</span><span class="s1">&#39;Key_words&#39;</span><span class="p">])</span>
+    <span class="n">matrix_w2v</span> <span class="o">=</span> <span class="n">w2v</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df_clean</span><span class="p">[</span><span class="s1">&#39;Key_words&#39;</span><span class="p">])</span>
+    
+    <span class="c1">#generating cosine similarity matrix using tfidf </span>
+    <span class="n">cosine_sim_1</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">(</span><span class="n">matrix_tfidf</span><span class="p">,</span><span class="n">matrix_tfidf</span><span class="p">)</span>
+    
+    <span class="c1">#generating cosine similarity matrix using word2vec transformed matrix </span>
+    <span class="n">cosine_sim_2</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">(</span><span class="n">matrix_w2v</span><span class="p">,</span><span class="n">matrix_w2v</span><span class="p">)</span>
+    
+    <span class="c1">#taking average of above two matrix to compute final similarity matrix</span>
+    <span class="n">cosine_sim</span> <span class="o">=</span> <span class="p">(</span><span class="n">cosine_sim_1</span><span class="o">+</span><span class="n">cosine_sim_2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
     
     <span class="k">return</span> <span class="n">cosine_sim</span>
 </pre></div>
@@ -14885,7 +14819,7 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#compute cosine similarities across articles</span>
@@ -14903,25 +14837,25 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[36]:</div>
+    <div class="prompt output_prompt">Out[35]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[  1.00000000e+00,   9.68171365e-03,   1.07325705e-02, ...,
-          8.90477831e-03,   1.44554171e-02,   1.10954812e-02],
-       [  9.68171365e-03,   1.00000000e+00,   1.72397567e-02, ...,
-          2.34639801e-02,   4.33662267e-04,   2.00835722e-02],
-       [  1.07325705e-02,   1.72397567e-02,   1.00000000e+00, ...,
-          1.34681529e-02,   1.76414831e-03,   1.10192285e-02],
-       ..., 
-       [  8.90477831e-03,   2.34639801e-02,   1.34681529e-02, ...,
-          1.00000000e+00,   6.26409202e-04,   1.47010837e-02],
-       [  1.44554171e-02,   4.33662267e-04,   1.76414831e-03, ...,
-          6.26409202e-04,   1.00000000e+00,   2.30839189e-03],
-       [  1.10954812e-02,   2.00835722e-02,   1.10192285e-02, ...,
-          1.47010837e-02,   2.30839189e-03,   1.00000000e+00]])</pre>
+<pre>array([[1.        , 0.5001685 , 0.500358  , ..., 0.49936636, 0.49353501,
+        0.4983431 ],
+       [0.5001685 , 1.        , 0.50613053, ..., 0.51057504, 0.47421149,
+        0.50523809],
+       [0.500358  , 0.50613053, 1.        , ..., 0.50555951, 0.47614302,
+        0.50127962],
+       ...,
+       [0.49936636, 0.51057504, 0.50555951, ..., 1.        , 0.47261606,
+        0.50327044],
+       [0.49353501, 0.47421149, 0.47614302, ..., 0.47261606, 1.        ,
+        0.47456875],
+       [0.4983431 , 0.50523809, 0.50127962, ..., 0.50327044, 0.47456875,
+        1.        ]])</pre>
 </div>
 
 </div>
@@ -14932,7 +14866,7 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">find_similar_articles</span><span class="p">(</span><span class="n">article_id</span><span class="p">):</span>
@@ -14964,7 +14898,7 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#dataframe which store user_id, article_id and number of times user has interacted with article</span>
@@ -14980,7 +14914,7 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># You made this function in an earlier notebook - using again here    </span>
@@ -15053,7 +14987,7 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">make_content_recs</span><span class="p">(</span><span class="mi">203</span><span class="p">)</span>
@@ -15080,21 +15014,21 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[40]:</div>
+    <div class="prompt output_prompt">Out[39]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>([794.0, 645.0, 722.0, 1006.0, 162.0, 475.0, 482.0, 152.0, 51.0, 153.0],
+<pre>([794.0, 645.0, 1006.0, 722.0, 162.0, 475.0, 482.0, 152.0, 51.0, 781.0],
  [&#39;Modern Machine Learning Algorithms&#39;,
   &#39;How to solve 90% of NLP problems&#39;,
-  &#39;Predicting Flight Cancellations Using Weather Data, Part 3&#39;,
   &#39;An Introduction to Stock Market Data Analysis with R (Part 1)&#39;,
   &#39;Gradient Boosting Explained&#39;,
   &#39;Using Deep Learning With Keras To Predict Customer Churn&#39;,
   &#39;How to Perform a Logistic Regression in R&#39;,
   &#39;Visual Information Theory &#39;,
+  &#39;Empirical Bayes for multiple sample sizes&#39;,
   &#39;On calculating AUC&#39;,
   &#39;Essentials of Machine Learning Algorithms (with Python and R Codes)&#39;])</pre>
 </div>
@@ -15119,9 +15053,9 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 <p><strong>Write an explanation of your content based recommendation system here.</strong></p>
 <p>The content based recommender system lies solely on the basis of the articles similar to the one user has interacted with. Here's a summary of how the content based recommender system works.</p>
 <ol>1. Extraction of key words by merging <b>doc_full_name</b>, <b>doc_description</b> and <b>doc_body</b> columns from df_content dataframe</ol>
-<ol>2. Vectorization using <b>TfIdfVectorizer</b> on the extracted keyword to compute normalized frequency</ol>
-<ol>3. Computation of <b>cosine similarities</b> between articles</ol>
-<ol>4. Then for any given user, similar articles are generated basis cosine similarity. The article fed to compute most similar articles is the one which user has most interacted with</ol>
+<ol>2. Vectorization using <b>TfIdfVectorizer</b> on the extracted keyword to compute normalized frequency and using <b>Word2Vec</b> model by gensim library to transform given corpus into vectors. </ol>
+<ol>3. Computation of <b>cosine similarities</b> between articles based on TfIdf Vectorization and Word2Vec Transformation and taking average of 2.</ol>
+<ol>4. Then for any given user, similar articles are generated basis cosine similarity. The article fed to compute most similar articles is the one which user has most interacted with</ol><p> <b>Note</b>: Our content based recommendation system, may yield better results if we use word embedding (e.g. spacy) to improve upon our similarity computation, but it's not always guaranteed.</p>
 </div>
 </div>
 </div>
@@ -15135,7 +15069,7 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#below set of lines will find out user who has only interacted with article 1427</span>
@@ -15156,7 +15090,7 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># make recommendations for a brand new user</span>
@@ -15187,23 +15121,23 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[42]:</div>
+    <div class="prompt output_prompt">Out[41]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>([726.0, 1.0, 475.0, 40.0, 871.0, 51.0, 1006.0, 482.0, 316.0, 152.0],
+<pre>([726.0, 1.0, 475.0, 40.0, 51.0, 871.0, 1006.0, 482.0, 152.0, 1030.0],
  [&#39;Communicating data science: A guide to presenting your work&#39;,
   &#39;Ensemble Learning to Improve Machine Learning Results&#39;,
   &#39;Modern Machine Learning Algorithms&#39;,
   &#39;How to solve 90% of NLP problems&#39;,
-  &#39;Leverage Python, SciKit, and text classification for behavioral profiling&#39;,
   &#39;Gradient Boosting Explained&#39;,
   &#39;Using Deep Learning With Keras To Predict Customer Churn&#39;,
   &#39;May 2016: Scripts of the Week&#39;,
   &#39;Overfitting in Machine Learning: What It Is and How to Prevent It&#39;,
-  &#39;Essentials of Machine Learning Algorithms (with Python and R Codes)&#39;])</pre>
+  &#39;Essentials of Machine Learning Algorithms (with Python and R Codes)&#39;,
+  &#39;Laplace noising versus simulated out of sample methods (cross frames)&#39;])</pre>
 </div>
 
 </div>
@@ -15223,7 +15157,7 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Load the matrix here</span>
@@ -15237,7 +15171,7 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># quick look at the matrix</span>
@@ -15254,7 +15188,7 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[44]:</div>
+    <div class="prompt output_prompt">Out[43]:</div>
 
 
 
@@ -15467,7 +15401,7 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Perform SVD on the User-Item Matrix Here</span>
@@ -15499,7 +15433,7 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">num_latent_feats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">700</span><span class="o">+</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
@@ -15570,7 +15504,7 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_train</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">40000</span><span class="p">)</span>
@@ -15610,7 +15544,7 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#How many users can we make predictions for in the test set?</span>
@@ -15656,7 +15590,7 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Replace the values in the dictionary below</span>
@@ -15710,7 +15644,7 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># fit SVD on the user_item_train matrix</span>
@@ -15724,12 +15658,13 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">u_test</span> <span class="o">=</span> <span class="n">u_train</span><span class="p">[</span><span class="n">common_idx_user</span><span class="p">,</span> <span class="p">:]</span>
 <span class="n">vt_test</span> <span class="o">=</span> <span class="n">vt_train</span><span class="p">[:,</span> <span class="n">common_idx_art</span><span class="p">]</span>
 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test Details: &#39;</span><span class="p">,</span><span class="n">u_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">vt_train</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test Details: &#39;</span><span class="p">,</span><span class="n">u_test</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">vt_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 
@@ -15747,7 +15682,8 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Test Details:  (20, 4487) (714, 574)
+<pre>Test Details:  (4487, 4487) (714, 714)
+Test Details:  (20, 4487) (714, 574)
 </pre>
 </div>
 </div>
@@ -15758,7 +15694,7 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Use these cells to see how well you can use the training </span>
@@ -15853,7 +15789,9 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 <p><strong>Your response here.</strong></p>
 <p>Looking at the graph, we can see that increasing the number of latent features doesn't help, rather worsens situation in terms of accuracy. This is a classic case of overfitting. Although, it may also be attributed to the fact that there are only 20 users out 682 in the test dataset, for whom we can predict. It's a very low number and we may want to increase number of users in test dataset who do not fall in <b>cold start</b> category. The other thing we can do is to keep <b>less number of latent features</b></p>.
 
-<p>Also, as the dataset is small, we cannot just resort to SVD for recommendations. We could use mix of Colloborative Filtering and Content Based Filtering to improve upon our recommendations as it happens in the real world. We design our cases with the combination of above recommendation techniques and conduct A/B testing to find out which holds best.And, to improve upon our SVD technique (and it will inherently benifit other techniques as well), collecting more features related to users and articles might help (e.g. time spent by the user on each article interacted, type of article, no. of search appearances for each article etc.).</p>
+<p>Also, as the dataset is small, we cannot just resort to SVD for recommendations. We could use mix of Colloborative Filtering and Content Based Filtering to improve upon our recommendations as it happens in the real world. We design our cases with the combination of above recommendation techniques and conduct A/B testing to find out which holds best.And, to improve upon our SVD technique (and it will inherently benifit other techniques as well), collecting more features related to users and articles might help (e.g. time spent by the user on each article interacted, type of article, no. of search appearances for each article etc.).</p><p>Having said that, lets articulate our observations and answer few of the below questions.</p><ol><b>1. Is accuracy a good metric to use here in this case? Does it provide us with a fair assessment of the model's performance?</b> - We see that out of 682 test users, we could only predict for 20 users. Owing to this fact, accuracy may not be the correct metric for the assessment. Generally, <b>Mean Average Precsion (MAP)</b>is considered to be a better metric for recommender systems. It  gives insight into how relevant the list of recommended items are. However, we may also go for <b>Mean Average Recall (MAR)</b>. It gives insight into how well the recommender is able to recall all the items the user has rated positively in the test set.</ol> 
+<ol><b>2. Is the current assessment framework robust enough to make conclusive results about the model? Think about the number of train and test users. How many users exist in your test set for whom you can make predictions? Is it sufficient?</b> - As stated previously, there are only 20 users for our test prediction. We want to test our accuracy on latent features ranging upto 700, so by a rule of thumb we would need 10-20 data points for each latent feature. Clearly our dataset is not enough to fulfill the requiement (Train_data - 4487, Test_data -20).</ol> 
+<ol><b>3. How should we conduct our A/B testing to improve upon our recommendation model?</b> We will divide our userbase into Control and treatment groups by a <b>User_Id or Cookies</b> based diversion. User_Id is a stable choice as user has to login to view recommended articles. So <b>no_of_users or no_of_cookies</b> will be the <b>Invariant Metric</b>. As part of our Evaluation metric, strictly considering above scenarios, we can measure <b>no_of_recommended_article_clicked/no_of_users(or cookies)</b>.</ol>
 </div>
 </div>
 </div>
@@ -15875,11 +15813,44 @@ Requirement already satisfied: six in /opt/conda/lib/python3.6/site-packages (fr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">subprocess</span> <span class="k">import</span> <span class="n">call</span>
 <span class="n">call</span><span class="p">([</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;-m&#39;</span><span class="p">,</span> <span class="s1">&#39;nbconvert&#39;</span><span class="p">,</span> <span class="s1">&#39;Recommendations_with_IBM.ipynb&#39;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[52]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
     </div>
