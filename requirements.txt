@@ -1,0 +1,6 @@
+pip install -U pip
+pip install pandas
+pip install -U numpy
+pip install pickle
+pip install matplotlib
+pip install rake_nltk
